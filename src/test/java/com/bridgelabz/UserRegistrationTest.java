@@ -81,4 +81,14 @@ public class UserRegistrationTest {
         UserRegistration userRegistration = new UserRegistration();
         Assertions.assertFalse(userRegistration.validationOfPasswordRuleTwo("kirankiran"));
     }
+    @Test
+    void givenPasswordValidatingWithAtLeastOneSpecialCharacterReturnsTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assertions.assertTrue(userRegistration.validationOfPasswordRuleFour("Kiran123@"));
+    }
+    @Test
+    void givenPasswordValidatingWithoutOneSpecialCharacterReturnsFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assertions.assertFalse(userRegistration.validationOfPasswordRuleTwo("kirankiran12234"));
+    }
 }
