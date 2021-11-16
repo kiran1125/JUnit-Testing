@@ -33,9 +33,22 @@ public class UserRegistrationTest {
         UserRegistration userRegistration = new UserRegistration();
         Assertions.assertTrue(userRegistration.validationOfEmailId("makamkiran95@gmail.com"));
     }
+
     @Test
-    void givenEmailIdValidatingWithRegexReturnsFalse(){
+    void givenEmailIdValidatingWithRegexReturnsFalse() {
         UserRegistration userRegistration = new UserRegistration();
         Assertions.assertFalse(userRegistration.validationOfEmailId("makamkiran95@@gmail.com"));
+    }
+
+    @Test
+    void givenMobileNumberValidatingWithRegexReturnsTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assertions.assertTrue(userRegistration.validationOfMobileNumber("91 9666069291"));
+    }
+
+    @Test
+    void givenMobileNumberValidatingWithRegexReturnsFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assertions.assertFalse(userRegistration.validationOfMobileNumber("919666069291"));
     }
 }
