@@ -14,4 +14,14 @@ public class UserRegistration {
         String regex = "^[A-Z]+[a-z]{2,}";
         return str.matches(regex);
     }
+
+    public boolean validationOfLastName(String str) {
+        //regex is the string pattern that to be matched
+        String regex = "^[A-Z]+[a-z]{2,}";
+        return str.matches(regex);
+    }
+    public boolean validationOfEmailId(String emailId) {
+        String regex = "^[A-Za-z0-9-+._]+@[a-z0-9]+(.[a-z]{2,3})+$";
+        return emailId.matches(regex);
+    }
 }
