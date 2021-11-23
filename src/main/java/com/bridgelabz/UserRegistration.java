@@ -88,4 +88,14 @@ public class UserRegistration {
         String regex = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[._@#$%&^*()+:?])[A-Za-z0-9._@#$%&^*()+:?]{8,}$";
         return (password.matches(regex));
     }
+
+    public String validationOfAllDetails(UserDetails userDetails) {
+        if ((this.validationOfFirstName(userDetails.firstName)) && (this.validationOfLastName(userDetails.lastName))
+                && (this.validationOfEmailId(userDetails.email)) && (this.validationOfMobileNumber(userDetails.mobile)) &&
+                    (this.validationOfPasswordRuleFour(userDetails.password))){
+            return "Happy";
+        }
+        else
+            return "Sad";
+    }
 }

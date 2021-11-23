@@ -100,4 +100,16 @@ public class UserRegistrationTest {
         UserRegistration userRegistration = new UserRegistration();
         Assertions.assertTrue(userRegistration.validationOfEmailId(str));
     }
+    @Test
+    void givenUserDetailsShouldReturnHappy(){
+        UserDetails userDetails = new UserDetails("Kiran","Karthik","mkamkiran95@gmail.com","91 9666069291","9966988298Ki@");
+        UserRegistration userRegistration = new UserRegistration();
+        Assertions.assertEquals("Happy",userRegistration.validationOfAllDetails(userDetails));
+    }
+    @Test
+    void givenUserDetailsShouldReturnSad(){
+        UserDetails userDetails = new UserDetails("Kiran","thik","mkamkiran95@gmail.com","91 9666069291","9966988298Ki@");
+        UserRegistration userRegistration = new UserRegistration();
+        Assertions.assertEquals("Sad",userRegistration.validationOfAllDetails(userDetails));
+    }
 }
