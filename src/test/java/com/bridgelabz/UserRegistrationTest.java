@@ -9,49 +9,81 @@ public class UserRegistrationTest {
     @Test
     void givenFirstNameWithFirstLetterCapitalMInThreeCharactersReturnsTrue() {
         UserRegistration userRegistration = new UserRegistration();
-        Assertions.assertTrue(userRegistration.validationOfFirstName("Kiran"));
+        try {
+            Assertions.assertTrue(userRegistration.validationOfFirstName("Kiran"));
+        } catch (InvalidUserException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
     void givenFirstNameWithOutFirstLetterCapitalMInThreeCharactersReturnsFalse() {
         UserRegistration userRegistration = new UserRegistration();
-        Assertions.assertFalse(userRegistration.validationOfFirstName("kiran"));
+        try {
+            Assertions.assertFalse(userRegistration.validationOfFirstName("kiran"));
+        } catch (InvalidUserException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
     void givenLastWithFirstLetterCapitalMInThreeCharactersReturnsTrue() {
         UserRegistration userRegistration = new UserRegistration();
-        Assertions.assertTrue(userRegistration.validationOfLastName("Kiran"));
+        try {
+            Assertions.assertTrue(userRegistration.validationOfLastName("Kiran"));
+        } catch (InvalidUserException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
     void givenLastNameWithOutFirstLetterCapitalMInThreeCharactersReturnsFalse() {
         UserRegistration userRegistration = new UserRegistration();
-        Assertions.assertFalse(userRegistration.validationOfLastName("kiran"));
+        try {
+            Assertions.assertFalse(userRegistration.validationOfLastName("kiran"));
+        } catch (InvalidUserException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
     void givenEmailIdValidatingWithRegexReturnsTrue() {
         UserRegistration userRegistration = new UserRegistration();
-        Assertions.assertTrue(userRegistration.validationOfEmailId("makamkiran95@gmail.com"));
+        try {
+            Assertions.assertTrue(userRegistration.validationOfEmailId("makamkiran95@gmail.com"));
+        } catch (InvalidUserException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
     void givenEmailIdValidatingWithRegexReturnsFalse() {
         UserRegistration userRegistration = new UserRegistration();
-        Assertions.assertFalse(userRegistration.validationOfEmailId("makamkiran95@@gmail.com"));
+        try {
+            Assertions.assertFalse(userRegistration.validationOfEmailId("makamkiran95@@gmail.com"));
+        } catch (InvalidUserException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
     void givenMobileNumberValidatingWithRegexReturnsTrue() {
         UserRegistration userRegistration = new UserRegistration();
-        Assertions.assertTrue(userRegistration.validationOfMobileNumber("91 9666069291"));
+        try {
+            Assertions.assertTrue(userRegistration.validationOfMobileNumber("91 9666069291"));
+        } catch (InvalidUserException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
     void givenMobileNumberValidatingWithRegexReturnsFalse() {
         UserRegistration userRegistration = new UserRegistration();
-        Assertions.assertFalse(userRegistration.validationOfMobileNumber("919666069291"));
+        try {
+            Assertions.assertFalse(userRegistration.validationOfMobileNumber("919666069291"));
+        } catch (InvalidUserException e) {
+            e.printStackTrace();
+        }
     }
     @Test
     void givenPasswordValidatingWithMinEightCharactersReturnsTrue() {
@@ -86,7 +118,11 @@ public class UserRegistrationTest {
     @Test
     void givenPasswordValidatingWithAtLeastOneSpecialCharacterReturnsTrue() {
         UserRegistration userRegistration = new UserRegistration();
-        Assertions.assertTrue(userRegistration.validationOfPasswordRuleFour("Kiran123@"));
+        try {
+            Assertions.assertTrue(userRegistration.validationOfPasswordRuleFour("Kiran123@"));
+        } catch (InvalidUserException e) {
+            e.printStackTrace();
+        }
     }
     @Test
     void givenPasswordValidatingWithoutOneSpecialCharacterReturnsFalse() {
@@ -98,7 +134,11 @@ public class UserRegistrationTest {
             "abc-100@abc.net", "abc.100@abc.com.au","abc@1.com","abc@gmail.com.com","abc+100@gmail.com"})
     void givenEmailIdsShouldReturnTrue(String str){
         UserRegistration userRegistration = new UserRegistration();
-        Assertions.assertTrue(userRegistration.validationOfEmailId(str));
+        try {
+            Assertions.assertTrue(userRegistration.validationOfEmailId(str));
+        } catch (InvalidUserException e) {
+            e.printStackTrace();
+        }
     }
     @Test
     void givenUserDetailsShouldReturnHappy(){
